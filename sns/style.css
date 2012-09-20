@@ -6,7 +6,6 @@
 .kc-paginator .jsp {
 	overflow:hidden;
 	position:relative;
-	height:45px;
 }
 .kc-paginator ul {
 	height:24px;
@@ -15,14 +14,15 @@
 	padding:0;
 	list-style:none;
 	display:table;
+	width:100%;
 }
 .kc-paginator li {
 	display:table-cell;
 }
 .kc-paginator .page-numbers {
-	display:block;
+	display:inline-block;
 	height:100%;
-	padding:0 .6em;
+	padding:0 .7em;
 	text-align:center;
 	margin-right:1.2em;
 }
@@ -45,16 +45,25 @@
 }
 
 /* jScrollPane */
+.kc-paginator .jsp {
+	margin-bottom:5px;
+}
 .kc-paginator .jspContainer {
 	overflow: hidden;
 	position: relative;
 }
 .kc-paginator .jspPane {
-	position: absolute;
+	position: relative;
 }
 .kc-paginator .jspVerticalBar,
 .kc-paginator .jspCap {
 	display:none;
+}
+.kc-paginator .jspScrollable {
+	margin-bottom:0;
+}
+.kc-paginator .jspScrollable .jspContainer {
+	padding-bottom:20px;
 }
 .kc-paginator .jspHorizontalBar {
 	position: absolute;
