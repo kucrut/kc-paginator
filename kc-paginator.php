@@ -22,7 +22,7 @@ final class kcPaginator {
 
 
 	public static function init() {
-		$url = plugins_url( '/kc-paginator/sns' );
+		$url = plugins_url( '/kc-paginator/kc-paginator-inc' );
 		wp_register_script( 'jquery-jscrollpane', "{$url}/jquery.jscrollpane.min.js", array('jquery'), '2.0.0beta12', true );
 		wp_enqueue_style( 'kc-paginator', apply_filters( 'kc_paginator_css', "{$url}/style.css" ), false, '0.1' );
 
