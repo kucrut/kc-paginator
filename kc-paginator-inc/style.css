@@ -15,6 +15,7 @@
 	list-style:none;
 	display:table;
 	width:100%;
+	text-align:right;
 }
 .kc-paginator li {
 	display:table-cell;
@@ -28,9 +29,6 @@
 }
 .kc-paginator li:last-child .page-numbers {
 	margin-right:0;
-}
-.kc-paginator li:last-child a.page-numbers {
-	padding-right:0;
 }
 .kc-paginator span.page-numbers {
 	color:#fff;
@@ -49,6 +47,7 @@
 	margin-bottom:5px;
 }
 .kc-paginator .jspContainer {
+	height:auto !important;
 	overflow: hidden;
 	position: relative;
 }
@@ -62,8 +61,18 @@
 .kc-paginator .jspScrollable {
 	margin-bottom:0;
 }
+.kc-paginator .jspScrollable ul {
+	text-align:center;
+}
 .kc-paginator .jspScrollable .jspContainer {
 	padding-bottom:20px;
+}
+.kc-paginator .noScroll ul {
+	display:block;
+	text-align:right;
+}
+.kc-paginator .noScroll li {
+	display:inline;
 }
 .kc-paginator .jspHorizontalBar {
 	position: absolute;

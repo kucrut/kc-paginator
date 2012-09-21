@@ -76,17 +76,31 @@ final class kcPaginator {
 	?>
 <script>
 jQuery(document).ready(function($) {
-	var $kcPg = $('nav.kc-paginator > div.jsp').jScrollPane({
-		horizontalDragMinWidth: 23,
-		horizontalDragMaxWidth: 23,
-		enableKeyboardNavigation: false,
-		hideFocus: true,
-		horizontalGutter: 0
-	});
+	var $kcPg = $('nav.kc-paginator > div.jsp');
+	if ( $kcPg.length ) {
+		$kcPg.on('kcPgInit', function() {
+			var $el = $(this)
+			if ( !$el.is('.jspScrollable') )
+				$el.addClass('noScroll');
+		});
 
-	$(window).resize(function() {
-		$kcPg.data('jsp').reinitialise();
-	});
+		$kcPg.jScrollPane({
+			horizontalDragMinWidth: 23,
+			horizontalDragMaxWidth: 23,
+			enableKeyboardNavigation: false,
+			hideFocus: true,
+			horizontalGutter: 0,
+			verticalGutter: 0
+		}).trigger('kcPgInit');
+
+		$(window).resize(function() {
+			setTimeout(function() {
+				$kcPg.removeClass('noScroll')
+					.data('jsp').reinitialise();
+				$kcPg.trigger('kcPgInit');
+			}, 300);
+		});
+	}
 });
 </script>
 	<?php }
